@@ -4,8 +4,10 @@ import Link from "next/link";
 import { Button } from "@material-ui/core";
 
 import PokemonType from "../src/pokemonType";
+import {Pokemon} from '../src/store'
 
-const PokemonRow = ({ pokemon, onClick, key }: { pokemon: any, onClick: (pokemon: any) => void, key: any | null}) => (
+
+const PokemonRow = ({ pokemon, onClick, key }: { pokemon: Pokemon, onClick: (pokemon: any) => void, key: any | null}) => (
   <>
     <tr key={pokemon.id}>
       <td>

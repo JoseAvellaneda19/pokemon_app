@@ -1,21 +1,44 @@
 import { makeAutoObservable } from "mobx";
 
+type PokemonName = {
+  english: string;
+  japanese: string;
+  chinese: string;
+  french: string;
+}
+
+type PokemonBase = {
+  HP: number;
+  Attack: number;
+  Defense: number;
+  Sp_Attack: number;
+  Sp_Defense: number;
+  Speed: number;
+}
+
+export type Pokemon = {
+  id: number;
+  name: PokemonName;
+  type: string[];
+  base: PokemonBase;
+}
+
 class Store {
-  pokemon = [];
+  pokemon: Pokemon[] = [];
   filter:string = "";
-  selectedPokemon = null;
+  selectedPokemon: Pokemon | null = null;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setPokemon({pokemon} : {pokemon: string | null}) {
+  setPokemon(pokemon: Pokemon[]) {
     this.pokemon = pokemon;
   }
-  setFilter({filter}: {filter:string }): void {
+  setFilter(filter: string) {
     this.filter = filter;
   }
-  setSelectedPokemon({selectedPokemon} : {selectedPokemon: any}) {
+  setSelectedPokemon(selectedPokemon: Pokemon) {
     this.selectedPokemon = selectedPokemon;
   }
 }

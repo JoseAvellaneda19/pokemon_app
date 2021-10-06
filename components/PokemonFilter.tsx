@@ -16,9 +16,11 @@ const PokemonFilter = () : ReactElement => {
     <Input
       type="text"
       value={store.filter}
-      onChange={(evt: any) => store.setFilter(evt.target.value)}
+      onChange={(evt) => store.setFilter(evt.target.value)}
     />
   );
 };
 
 export default observer(PokemonFilter);
+
+

@@ -19,7 +19,7 @@ function PokemonTable() {
             <PokemonRow
               key={pokemon['id']}
               pokemon={pokemon}
-              onClick={(pokemon: any) => store.setSelectedPokemon(pokemon)}
+              onClick={(poke) => store.setSelectedPokemon(poke)}
             />
           ))}
       </tbody>
